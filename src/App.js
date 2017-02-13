@@ -3,11 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 import MsgComponent from './messageComponent.js';
+import VacancySignComponent from './vacancySignComponent.js';
 
 class App extends Component {
   render() {
     return (
-	<MsgComponent message="hello" />
+	<div>
+		<MsgComponent message="hello" />
+		<VacancySignComponent hasvacancy="true" />
+	</div>
     );
   }
 }
