@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-const MsgComponent = React.createClass({
-	render : function() {
-		return ( 
-			<div> {this.props.message} </div>
-		);
-	}
-});
+
+import MsgComponent from './messageComponent.js';
 
 class App extends Component {
   render() {
