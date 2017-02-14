@@ -4,6 +4,8 @@ import './App.css';
 
 import MsgComponent from './messageComponent.js';
 import VacancySignComponent from './vacancySignComponent.js';
+import BannerAd from './bannerAdWithEventsComponent.js';
+import EventsExerciseComponent from './eventsExerciseComponent.js';
 
 class App extends Component {
   render() {
@@ -11,6 +13,8 @@ class App extends Component {
 	<div>
 		<MsgComponent message="hello" />
 		<VacancySignComponent hasvacancy="true" />
+		<BannerAd />
+		<EventsExerciseComponent />
 	</div>
     );
   }

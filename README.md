@@ -72,6 +72,51 @@ Create a VacancySign component that has a boolean prop hasvacancy. The component
 	});	
 </code>
 
+#####Events
+Let's dive right in. This example component renders a div that responds to click events.
+
+<code>
+	var BannerAd = React.createClass({
+		onBannerClick : function (evnt) {
+	 		//codez to make the moneys
+		},
+		render : function () {
+			// Render the div with an onClick prop (value is a function)
+			return (
+				<div onClick={this.props.onBannerClick}> Click Me!</div>
+			);
+		}
+	});
+</code>
+That's it. You add onXXX to the nodes you want. Notice how the value of the prop is a function.
+
+React keeps track of which rendered nodes have listeners. The synthetic event system implements its own bubbling and calls the appropriate handlers.
+
+#####Exercise: Events
+This one's a little trickier but you know everything you need. Remember that you can pass functions as props.
+<code>
+	var childComponent = React.createClass({
+		render : function () {
+			return (
+				<div className="prompt">Add a click handler to this button so that when clicked, performMagic is called in the parent component.</div>
+
+				<button onClick={this.props.onMagicClick}> Do Magic!</button>
+			)
+		}
+	});
+	
+	var parentComponent = React.createClass({
+		performMagic : function () {
+			alert("TAADA!");
+		},
+		render : function () {
+			return (
+				<ChildComponent onMagicClick={this.performMagic} />
+			);
+		}			
+	})
+</code>
+
 References 
 Create first react app - https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html , 
 Tutorial - http://buildwithreact.com/tutorial 
