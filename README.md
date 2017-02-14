@@ -1,6 +1,11 @@
 # react-in-action
 React learnings
 
+######Clone & use following commands to start server
+	
+	npm install
+	npm start
+
 Tutorial: 
 #####Introduction
 Give React some personality by sprucing up this hello message.
