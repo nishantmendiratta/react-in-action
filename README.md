@@ -218,6 +218,27 @@ Edit this board picker so the button actually works. Right now, the first board 
 
 Components, props, and state form the core of React. You're ready to build with React!
 
+####Tutorial: Under the Hood
+Now that we know how to use React, let's take a quick look at how React works.
+
+#####Virtual DOM
+React uses a concept called the virtual DOM. When you write <div>, you are not immediately creating a div. Instead, you are working with the virtual DOM, a representation of the actual DOM. I like to think of virtual DOM components as markers; they tell React what should be rendered. It is then the React engine's job to make sure the actual DOM matches the given markers.
+
+With this approach, React gets to choose how to update the actual DOM. This allows for performance optimizations such as batching and minifying DOM updates.
+
+```JAVASCRIPT IS FAST. DOM IS SLOW.```
+React is driven by the idea that JavaScript is fast but working with the DOM is slow. Creating and modifying virtual DOM components is fast. Querying a div's computedStyle is slow. When you mutate or query the DOM, the browser needs to reflow and redraw, which are very expensive relative to non-DOM operations, like instantiating a JavaScript class.
+
+#####Declarative
+You may be surprised that React calls render everytime a component's state changes, as well as the render of all its children components. Traditionally, when you want to make a red button blue, you write code along the lines of $(button).removeClass('red').addClass('blue'). This is an imperative style of programming. With React, you modify a component's state and the component tree rerenders. This is a more declarative style of programming.
+
+#####Diff and Updates
+It does a "diff" between two render passes and applies the minimal changes needed to reflect the new render tree. If this feels magical, we'll break this down in other articles on the site.
+
+#####Thank you
+This is the end of the React basics tutorial. Now you have the knowledge you need to start building your React applications!
+
+
 References 
 Create first react app - https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html , 
 Tutorial - http://buildwithreact.com/tutorial 
