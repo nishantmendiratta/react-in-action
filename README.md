@@ -4,6 +4,7 @@ React learnings
 Tutorial: 
 #####Introduction
 Give React some personality by sprucing up this hello message.
+
 	<code>
 		ReactDOM.render(
 			<div>Hello!</div>,
@@ -15,6 +16,7 @@ Give React some personality by sprucing up this hello message.
 JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitely use React without JSX but JSX makes React a lot more elegant.
 Just like XML, JSX tags have a tag name, attributes, and children. If an attribute value is enclosed in quotes, the value is a string. Otherwise, wrap the value in braces and the value is the enclosed JavaScript expression.
 eg
+
 	<code>
 		React.createElement("div", { className: "red" }, "Children Text");
 		
@@ -88,12 +90,14 @@ Let's dive right in. This example component renders a div that responds to click
 			}
 		});
 	</code>
+
 That's it. You add onXXX to the nodes you want. Notice how the value of the prop is a function.
 
 React keeps track of which rendered nodes have listeners. The synthetic event system implements its own bubbling and calls the appropriate handlers.
 
 #####Exercise: Events
 This one's a little trickier but you know everything you need. Remember that you can pass functions as props.
+
 	<code>
 		var childComponent = React.createClass({
 			render : function () {
@@ -123,6 +127,7 @@ So far, we've used React as a static rendering engine. Now, we're going to add s
 The key difference between props and state is that state is internal and controlled by the component itself while props are external and controlled by whatever renders the component. Let's see it in practice.
 
 Eg - Cow Clicker
+
 	<code>
 		var CowClicker = React.createClass({
 			getInititalState : function () {
